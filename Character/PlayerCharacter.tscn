@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b006h08ncpik3"]
 
-[ext_resource type="Script" uid="uid://d1eix3ymnvb3x" path="res://Character/CameraMovement.gd" id="1_cgtap"]
+[ext_resource type="Script" uid="uid://dwgcqdmcyhkbg" path="res://Character/CameraMovement.gd" id="1_cgtap"]
 [ext_resource type="Script" uid="uid://bn5v0cgtk708s" path="res://Character/InputManagerComponent.gd" id="1_r6jr0"]
 [ext_resource type="Script" uid="uid://0qbebqdulupp" path="res://Character/MovementComponent.gd" id="2_2lctp"]
 [ext_resource type="Script" uid="uid://cvg6u1fyk0wyb" path="res://Character/GroundStateHandler.gd" id="4_loigd"]
@@ -35,11 +35,15 @@ script = ExtResource("4_loigd")
 [node name="GroundCollider" type="CollisionShape3D" parent="GroundStateDetector" unique_id=167578318]
 shape = SubResource("CylinderShape3D_cgtap")
 
-[node name="CameraRig" type="Node3D" parent="." unique_id=381673268 node_paths=PackedStringArray("player", "camera", "InputManager")]
+[node name="CameraRig" type="Node3D" parent="." unique_id=381673268 node_paths=PackedStringArray("Player", "Camera", "InputManager")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3153229, 0)
 script = ExtResource("1_cgtap")
-player = NodePath("..")
-camera = NodePath("PlayerCamera")
+Player = NodePath("..")
+Camera = NodePath("PlayerCamera")
 InputManager = NodePath("../InputManagerComponent")
+BobStrength = 0.08
+StepFrequency = 0.6
+TiltStrength = 0.75
 
 [node name="PlayerCamera" type="Camera3D" parent="CameraRig" unique_id=1318570402]
+current = true
