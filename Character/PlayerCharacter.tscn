@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b006h08ncpik3"]
+
+[ext_resource type="Script" uid="uid://d1eix3ymnvb3x" path="res://Character/CameraMovement.gd" id="1_cgtap"]
+[ext_resource type="Script" uid="uid://bn5v0cgtk708s" path="res://Character/InputManagerComponent.gd" id="1_r6jr0"]
+[ext_resource type="Script" uid="uid://0qbebqdulupp" path="res://Character/MovementComponent.gd" id="2_2lctp"]
+[ext_resource type="Script" uid="uid://cvg6u1fyk0wyb" path="res://Character/GroundStateHandler.gd" id="4_loigd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fatkt"]
+height = 1.65
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cgtap"]
+height = 0.15
+radius = 0.2
+
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=57928311 node_paths=PackedStringArray("InputManager", "PlayerGroundStateHandler")]
+collision_layer = 0
+max_slides = 8
+floor_snap_length = 0.35
+safe_margin = 0.05
+script = ExtResource("2_2lctp")
+InputManager = NodePath("InputManagerComponent")
+PlayerGroundStateHandler = NodePath("GroundStateDetector")
+
+[node name="PlayerCollider" type="CollisionShape3D" parent="." unique_id=2048825099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8239242, 0)
+shape = SubResource("CapsuleShape3D_fatkt")
+
+[node name="InputManagerComponent" type="Node" parent="." unique_id=381651773]
+script = ExtResource("1_r6jr0")
+metadata/_custom_type_script = "uid://bn5v0cgtk708s"
+
+[node name="GroundStateDetector" type="Area3D" parent="." unique_id=1977185780]
+script = ExtResource("4_loigd")
+
+[node name="GroundCollider" type="CollisionShape3D" parent="GroundStateDetector" unique_id=167578318]
+shape = SubResource("CylinderShape3D_cgtap")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=381673268 node_paths=PackedStringArray("player", "camera", "InputManager")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3153229, 0)
+script = ExtResource("1_cgtap")
+player = NodePath("..")
+camera = NodePath("PlayerCamera")
+InputManager = NodePath("../InputManagerComponent")
+
+[node name="PlayerCamera" type="Camera3D" parent="CameraRig" unique_id=1318570402]
