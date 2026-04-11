@@ -13,8 +13,8 @@ height = 0.3622589
 radius = 0.82958984
 
 [node name="BouncePlatform" type="AnimatableBody3D" unique_id=607921131 node_paths=PackedStringArray("PlatformMesh")]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_5hajr")
 PlatformMesh = NodePath("trampoline")
 metadata/_custom_type_script = "uid://cwfd50c823fyh"

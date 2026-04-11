@@ -48,8 +48,6 @@ func _physics_process(delta: float) -> void:
 	if _collapsing:
 		_collapse_speed = min(_collapse_speed + CollapseAcceleration * delta, CollapseMaxSpeed)
 		global_position += Vector3.DOWN * _collapse_speed * delta
-		
-		print(global_position)
 
 func _process(delta: float) -> void:
 	if _collapsing_triggered:
