@@ -12,6 +12,9 @@ class_name DisappearingPlatform extends AnimatableBody3D
 @export var CollapseRumbleStrength := 0.08
 @export var RumbleSpeed := 7.0
 
+@export_category("Platform Misc")
+@export var PointsAddedWhenDisappearing : int = 50
+
 var _collapsing : bool = false
 var _collapsing_triggered : bool = false
 var _collapse_speed := 0.0
@@ -34,6 +37,8 @@ func CollapsePlatform() -> void:
 
 	_collapsing = true
 	
+	Global.add_to_score(PointsAddedWhenDisappearing)
+	
 	await get_tree().create_timer(TimeTilDespawn).timeout
 	
 	queue_free()
@@ -43,6 +48,8 @@ func _physics_process(delta: float) -> void:
 	if _collapsing:
 		_collapse_speed = min(_collapse_speed + CollapseAcceleration * delta, CollapseMaxSpeed)
 		global_position += Vector3.DOWN * _collapse_speed * delta
+		
+		print(global_position)
 
 func _process(delta: float) -> void:
 	if _collapsing_triggered:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckrm5vhotgkmu"]
 
-[ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/DisappearingPlatform.gd" id="1_0cdnw"]
+[ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/Platform/DisappearingPlatform.gd" id="1_0cdnw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2d4q5"]
 albedo_color = Color(0, 0.31764707, 0.09803922, 1)

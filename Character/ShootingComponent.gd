@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 				get_tree().root.add_child(bullet)
 				bullet._velocity = InputManager.ForwardDirection * BulletSpeed
 				bullet.global_position = BulletSpawn.global_position
+				bullet.look_at(bullet.global_position + bullet._velocity, Vector3.UP)
 				_last_shoot = Time.get_ticks_msec()
 		else:
 			if _previous_shoot_state != InputManager.ShootPressState:
@@ -25,5 +26,6 @@ func _process(delta: float) -> void:
 				get_tree().root.add_child(bullet)
 				bullet._velocity = InputManager.ForwardDirection * BulletSpeed
 				bullet.global_position = BulletSpawn.global_position
+				bullet.look_at(bullet.global_position + bullet._velocity, Vector3.UP)
 				_last_shoot = Time.get_ticks_msec()
 	_previous_shoot_state = InputManager.ShootPressState

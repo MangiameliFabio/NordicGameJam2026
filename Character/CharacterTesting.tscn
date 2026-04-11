@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://df3clq51mfp27"]
 
 [ext_resource type="PackedScene" uid="uid://b006h08ncpik3" path="res://Character/PlayerCharacter.tscn" id="1_o4gn0"]
-[ext_resource type="PackedScene" uid="uid://ckrm5vhotgkmu" path="res://Environment/Platform.tscn" id="2_u0fm5"]
+[ext_resource type="Script" uid="uid://7gixxveeg8a5" path="res://Environment/Targets/DestroyTrigger.gd" id="2_6fvot"]
+[ext_resource type="PackedScene" uid="uid://ckrm5vhotgkmu" path="res://Environment/Platform/Platform.tscn" id="2_u0fm5"]
+[ext_resource type="PackedScene" uid="uid://giwcpb5p3ljp" path="res://Environment/Targets/Target.tscn" id="3_t45vo"]
+[ext_resource type="PackedScene" uid="uid://kx0ysi1654k4" path="res://Environment/BounncePad/BouncePad.tscn" id="5_4wskn"]
+[ext_resource type="PackedScene" uid="uid://b81g1jcfypx02" path="res://Environment/Platform/BouncePlatform.tscn" id="6_2j2fy"]
+[ext_resource type="PackedScene" uid="uid://cs1jxbgcoay88" path="res://UI/HUD.tscn" id="7_6060h"]
+[ext_resource type="Script" uid="uid://b8bmhgawerm3n" path="res://Character/LoseCollider.gd" id="8_7dkh4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bbbun"]
 size = Vector3(10, 0.2, 10)
@@ -16,6 +22,9 @@ size = Vector3(2, 2, 2)
 size = Vector3(2, 2, 2)
 
 [sub_resource type="Environment" id="Environment_o4gn0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6060h"]
+size = Vector3(30, 1, 30)
 
 [node name="Node3D" type="Node3D" unique_id=1323974193]
 
@@ -67,14 +76,20 @@ shape = SubResource("BoxShape3D_o4gn0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5" unique_id=1262403090]
 mesh = SubResource("BoxMesh_u0fm5")
 
-[node name="StaticBody3D6" type="StaticBody3D" parent="." unique_id=1003263210]
+[node name="Destroyable" type="StaticBody3D" parent="." unique_id=1003263210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4953594, 0.24324, -2.6249378)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6" unique_id=1018967180]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destroyable" unique_id=1018967180]
 shape = SubResource("BoxShape3D_o4gn0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D6" unique_id=908981536]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Destroyable" unique_id=1509337369]
+shape = SubResource("BoxShape3D_o4gn0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Destroyable" unique_id=908981536]
 mesh = SubResource("BoxMesh_u0fm5")
+
+[node name="DestroyTrgger" type="Node" parent="Destroyable" unique_id=933288751]
+script = ExtResource("2_6fvot")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="." unique_id=720187918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.809617, 0.24324, -3.4480205)
@@ -85,14 +100,17 @@ shape = SubResource("BoxShape3D_o4gn0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D7" unique_id=1452077976]
 mesh = SubResource("BoxMesh_u0fm5")
 
-[node name="StaticBody3D8" type="StaticBody3D" parent="." unique_id=1757240349]
+[node name="Destroyable1" type="StaticBody3D" parent="." unique_id=1757240349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3283741, -0.4601456, -1.646697)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8" unique_id=1881775207]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destroyable1" unique_id=1881775207]
 shape = SubResource("BoxShape3D_o4gn0")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D8" unique_id=222558248]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Destroyable1" unique_id=222558248]
 mesh = SubResource("BoxMesh_u0fm5")
+
+[node name="DestroyTrgger" type="Node" parent="Destroyable1" unique_id=1900178831]
+script = ExtResource("2_6fvot")
 
 [node name="StaticBody3D9" type="StaticBody3D" parent="." unique_id=536881868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1117184, -0.4601456, 2.2592304)
@@ -114,3 +132,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.089577675, 1.8632736, -2.9
 axis_lock_linear_x = false
 axis_lock_linear_y = false
 axis_lock_linear_z = false
+
+[node name="Target" parent="." unique_id=1106970928 node_paths=PackedStringArray("ObjectToTrigger") instance=ExtResource("3_t45vo")]
+transform = Transform3D(0.65293163, 0, -0.75741684, 0, 1, 0, 0.75741684, 0, 0.65293163, 1.409986, 0.7523161, -1.5883667)
+ObjectToTrigger = NodePath("../Destroyable")
+
+[node name="Target2" parent="." unique_id=296156455 node_paths=PackedStringArray("ObjectToTrigger") instance=ExtResource("3_t45vo")]
+transform = Transform3D(0.5536677, 0, -0.8327377, 0, 1, 0, 0.8327377, 0, 0.5536677, 2.3093963, 0.7523161, -0.6344291)
+ObjectToTrigger = NodePath("../Destroyable1")
+
+[node name="BouncePad" parent="." unique_id=160722725 instance=ExtResource("5_4wskn")]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -1.8296418, 1.185511, 0)
+
+[node name="BouncePad2" parent="." unique_id=1115143749 instance=ExtResource("5_4wskn")]
+transform = Transform3D(-0.4942756, 0, -0.8693053, 0, 1, 0, 0.8693053, 0, -0.4942756, -0.391477, 1.185511, 0.4408865)
+
+[node name="BouncePad3" parent="." unique_id=193782389 instance=ExtResource("5_4wskn")]
+transform = Transform3D(0.8836677, 0, -0.4681148, 0, 1, 0, 0.4681148, 0, 0.8836677, -0.5007544, 1.185511, -0.54673946)
+
+[node name="Platform2" parent="." unique_id=1213076847 instance=ExtResource("6_2j2fy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0115316, 0.3717354, 3.8892784)
+
+[node name="Hud" parent="." unique_id=360832325 instance=ExtResource("7_6060h")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=780431717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.6794224, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("8_7dkh4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1329590568]
+shape = SubResource("BoxShape3D_6060h")

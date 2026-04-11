@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cnf0vfqdpi1jg"]
+
+[ext_resource type="Script" uid="uid://du0o3je0rdgfj" path="res://UI/EndScreen.gd" id="1_c6ust"]
+
+[node name="EndScreen" type="Control" unique_id=179761836]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c6ust")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=853865522]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1089166633]
+layout_mode = 2
+text = "Score"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="VBoxContainer" unique_id=1186920331]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=39058212]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=1455727956]
+layout_mode = 2
+text = "Restart"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=1076645726]
+layout_mode = 2
+text = "Main Menu
+"
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

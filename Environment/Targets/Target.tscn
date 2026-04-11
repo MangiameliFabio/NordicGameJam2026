@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://giwcpb5p3ljp"]
+
+[ext_resource type="Script" uid="uid://bka48ucuabc22" path="res://Environment/Targets/Target.gd" id="1_fbxwc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k8pf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbxwc"]
+albedo_color = Color(1, 0, 0.05490196, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8k8pf"]
+size = Vector3(1, 1, 0.20385742)
+
+[node name="Target" type="Node3D" unique_id=1106970928 node_paths=PackedStringArray("TargetArea")]
+script = ExtResource("1_fbxwc")
+TargetArea = NodePath("TargetArea")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1631085639]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+height = 0.16748047
+sides = 20
+material = SubResource("StandardMaterial3D_8k8pf")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=475890374]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -9.337761e-11, 0.0021362305)
+radius = 0.45
+height = 0.17175293
+sides = 20
+material = SubResource("StandardMaterial3D_fbxwc")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=521585540]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.9475901e-10, 0.0044555664)
+radius = 0.35
+height = 0.1763916
+sides = 20
+material = SubResource("StandardMaterial3D_8k8pf")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="." unique_id=118383267]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -2.7079505e-10, 0.0061950684)
+radius = 0.20263672
+height = 0.1798706
+sides = 20
+material = SubResource("StandardMaterial3D_fbxwc")
+
+[node name="TargetArea" type="Area3D" parent="." unique_id=1083096610]
+
+[node name="TargetShape" type="CollisionShape3D" parent="TargetArea" unique_id=588758471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.004760742)
+shape = SubResource("BoxShape3D_8k8pf")

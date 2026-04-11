@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DebugDraw2D="*uid://bqp8t4r5iieqc"
+Global="*uid://cwvwsllo20co0"
+TransitionManager="*uid://cx78l3yep5ji8"
 
 [debug_draw_3d]
 
