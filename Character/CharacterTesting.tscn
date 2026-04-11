@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://df3clq51mfp27"]
 
 [ext_resource type="PackedScene" uid="uid://b006h08ncpik3" path="res://Character/PlayerCharacter.tscn" id="1_o4gn0"]
+[ext_resource type="PackedScene" uid="uid://ckrm5vhotgkmu" path="res://Environment/Platform.tscn" id="2_u0fm5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bbbun"]
 size = Vector3(10, 0.2, 10)
@@ -107,3 +108,9 @@ environment = SubResource("Environment_o4gn0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1628742984]
 transform = Transform3D(0.25654247, -0.751307, 0.6080491, 0, 0.6291033, 0.7773217, -0.96653295, -0.19941603, 0.16139172, 0, 8.065493, 0)
+
+[node name="Platform" parent="." unique_id=46675409 instance=ExtResource("2_u0fm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.089577675, 1.8632736, -2.9438303)
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false

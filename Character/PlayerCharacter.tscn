@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dwgcqdmcyhkbg" path="res://Character/CameraMovement.gd" id="1_cgtap"]
 [ext_resource type="Script" uid="uid://bn5v0cgtk708s" path="res://Character/InputManagerComponent.gd" id="1_r6jr0"]
 [ext_resource type="Script" uid="uid://0qbebqdulupp" path="res://Character/MovementComponent.gd" id="2_2lctp"]
+[ext_resource type="Script" uid="uid://20v4xya0hnn" path="res://Character/ShootingComponent.gd" id="3_wbhtb"]
+[ext_resource type="PackedScene" uid="uid://dytc0bjykef8c" path="res://Character/Bullet.tscn" id="4_6jmpq"]
 [ext_resource type="Script" uid="uid://cvg6u1fyk0wyb" path="res://Character/GroundStateHandler.gd" id="4_loigd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fatkt"]
@@ -13,7 +15,8 @@ height = 0.15
 radius = 0.2
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=57928311 node_paths=PackedStringArray("InputManager", "PlayerGroundStateHandler")]
-collision_layer = 0
+collision_layer = 2
+collision_mask = 3
 max_slides = 8
 floor_snap_length = 0.35
 safe_margin = 0.05
@@ -29,7 +32,15 @@ shape = SubResource("CapsuleShape3D_fatkt")
 script = ExtResource("1_r6jr0")
 metadata/_custom_type_script = "uid://bn5v0cgtk708s"
 
+[node name="ShootingComponent" type="Node" parent="." unique_id=825127843 node_paths=PackedStringArray("InputManager")]
+script = ExtResource("3_wbhtb")
+InputManager = NodePath("../InputManagerComponent")
+BulletScene = ExtResource("4_6jmpq")
+metadata/_custom_type_script = "uid://20v4xya0hnn"
+
 [node name="GroundStateDetector" type="Area3D" parent="." unique_id=1977185780]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("4_loigd")
 
 [node name="GroundCollider" type="CollisionShape3D" parent="GroundStateDetector" unique_id=167578318]
