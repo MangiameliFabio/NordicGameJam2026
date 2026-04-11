@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dytc0bjykef8c"]
 
+[ext_resource type="Script" uid="uid://bdu0gputyns8u" path="res://Character/BulletLogic.gd" id="1_kxmi0"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_lvrqt"]
 radius = 0.05
 
@@ -11,9 +13,14 @@ material = SubResource("StandardMaterial3D_lvrqt")
 radius = 0.05
 height = 0.1
 
-[node name="Bullet" type="Node3D" unique_id=710135686]
+[node name="Bullet" type="Node3D" unique_id=567640218 node_paths=PackedStringArray("BulletArea")]
+script = ExtResource("1_kxmi0")
+BulletArea = NodePath("Area3D")
+metadata/_custom_type_script = "uid://bdu0gputyns8u"
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1966740357]
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1900221752]
 shape = SubResource("SphereShape3D_lvrqt")
