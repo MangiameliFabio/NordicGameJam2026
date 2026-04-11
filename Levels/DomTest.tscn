@@ -16,10 +16,14 @@ offsets = PackedFloat32Array(0, 0.4087838, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.4054054, 0.4054054, 0.4054054, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_46fj2"]
+noise_type = 0
+frequency = 0.0064
 domain_warp_enabled = true
 domain_warp_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bv3s5"]
+height = 1024
+generate_mipmaps = false
 noise = SubResource("FastNoiseLite_46fj2")
 color_ramp = SubResource("Gradient_6hxdk")
 seamless = true
@@ -42,10 +46,12 @@ ambient_light_sky_contribution = 0.15
 glow_enabled = true
 glow_bloom = 0.1
 glow_blend_mode = 0
+fog_enabled = true
 fog_light_color = Color(0.566096, 0.54439425, 0.54151064, 1)
 fog_light_energy = 0.57
+fog_density = 0.0046
+fog_sky_affect = 0.751
 fog_depth_begin = 74.5
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.024
 volumetric_fog_albedo = Color(0.8047426, 0.80474263, 0.8047426, 1)
 volumetric_fog_emission = Color(0.021434618, 0.02143464, 0.021434633, 1)
@@ -99,7 +105,7 @@ metallic_specular = 0.13
 albedo_color = Color(0.1237779, 0.080803774, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o0x4h"]
-size = Vector3(278.70215, 1, 291.31445)
+size = Vector3(334.2331, 1, 352.64014)
 
 [node name="DomTest" type="Node3D" unique_id=2091618539]
 
@@ -112,8 +118,9 @@ JumpVelocity = 4.0
 environment = SubResource("Environment_bvi20")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=72789605]
-transform = Transform3D(0.86717135, 0.20996083, 0.45158637, -0.30191317, -0.49950698, 0.81199825, 0.39605835, -0.8404816, -0.36976817, 0, 15.284137, 0)
+transform = Transform3D(0.86717147, 0.20996082, 0.45158648, -0.4359105, -0.118483126, 0.89215696, 0.24082336, -0.9705043, -0.011221021, 0, 15.284137, 0)
 light_color = Color(0.9365489, 0.9073955, 0.87830734, 1)
+light_energy = 0.9
 light_volumetric_fog_energy = 1.158
 
 [node name="Platform1" parent="." unique_id=519910090 instance=ExtResource("2_r83mg")]
@@ -127,6 +134,18 @@ transform = Transform3D(0.21101096, 0, 0.21324721, 0, 0.2999999, 0, -0.21324721,
 
 [node name="Platform10" parent="." unique_id=998525585 instance=ExtResource("3_dyrbm")]
 transform = Transform3D(-0.2978592, 0, 0.035775926, 0, 0.29999992, 0, -0.035775926, 0, -0.2978592, -2.1558204, 1.5539551, -9.985995)
+
+[node name="Platform79" parent="." unique_id=1784405921 instance=ExtResource("3_dyrbm")]
+transform = Transform3D(0.24664322, 0, -0.17078386, 0, 0.29999992, 0, 0.17078386, 0, 0.24664322, -10.807211, 2.4720476, -2.16708)
+
+[node name="Platform80" parent="." unique_id=852147279 instance=ExtResource("3_dyrbm")]
+transform = Transform3D(-0.28580797, 0, -0.09117999, 0, 0.2999999, 0, 0.09117999, 0, -0.28580797, -9.975079, 2.4720476, -6.7185574)
+
+[node name="Platform81" parent="." unique_id=1469763951 instance=ExtResource("3_dyrbm")]
+transform = Transform3D(-0.26284406, 0, 0.14461327, 0, 0.2999999, 0, -0.14461327, 0, -0.26284406, -9.812509, 5.402916, -8.772162)
+
+[node name="Platform82" parent="." unique_id=152183490 instance=ExtResource("3_dyrbm")]
+transform = Transform3D(-0.29245403, 0, 0.06686274, 0, 0.2999999, 0, -0.06686274, 0, -0.29245403, -8.751872, 5.402916, -0.2540505)
 
 [node name="Platform11" parent="." unique_id=557838443 instance=ExtResource("3_dyrbm")]
 transform = Transform3D(-0.169814, 0, 0.24731198, 0, 0.29999995, 0, -0.24731198, 0, -0.169814, -0.12461579, 3.1291504, -11.442715)
@@ -155,11 +174,23 @@ transform = Transform3D(-0.29080012, 0, 0.07372417, 0, 0.2999999, 0, -0.07372417
 [node name="Platform2" parent="." unique_id=931645337 instance=ExtResource("4_bvi20")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.1026123, 2.0196848, -0.19207287)
 
+[node name="Platform77" parent="." unique_id=1312546904 instance=ExtResource("4_bvi20")]
+transform = Transform3D(0.28026506, 0, 0.107011616, 0, 0.29999998, 0, -0.107011616, 0, 0.28026506, -7.1339445, 1.8377702, -3.9076462)
+
+[node name="Platform78" parent="." unique_id=260560594 instance=ExtResource("4_bvi20")]
+transform = Transform3D(0.2993532, 0, 0.019688867, 0, 0.29999998, 0, -0.019688867, 0, 0.2993532, -9.251313, 1.9909718, -3.844347)
+
 [node name="Platform12" parent="." unique_id=360391248 instance=ExtResource("4_bvi20")]
 transform = Transform3D(0.2564627, 0, -0.15564987, 0, 0.29999998, 0, 0.15564987, 0, 0.2564627, 5.6529922, 1.8561792, -7.1262035)
 
 [node name="Platform16" parent="." unique_id=1511833694 instance=ExtResource("4_bvi20")]
 transform = Transform3D(0.14248918, 0, -0.26400158, 0, 0.3, 0, 0.26400158, 0, 0.14248918, 2.2257962, 12.056587, -7.5151377)
+
+[node name="Platform84" parent="." unique_id=1993156567 instance=ExtResource("4_bvi20")]
+transform = Transform3D(0.22669432, 0, -0.19649345, 0, 0.30000004, 0, 0.19649345, 0, 0.22669432, -4.317868, 8.649329, -4.514451)
+
+[node name="Platform85" parent="." unique_id=663092569 instance=ExtResource("4_bvi20")]
+transform = Transform3D(0.2993604, 0, -0.019579127, 0, 0.30000004, 0, 0.019579127, 0, 0.2993604, -1.4677329, 8.285732, -4.514451)
 
 [node name="Platform38" parent="." unique_id=1922438640 instance=ExtResource("4_bvi20")]
 transform = Transform3D(-0.0595117, 0.03186322, -0.29230654, 0.009380387, 0.29828736, 0.030605372, 0.2938884, -0.0030685766, -0.060168244, -0.82520306, 12.758183, -7.049433)
@@ -169,6 +200,9 @@ transform = Transform3D(0.01441437, 0, -0.29965353, 0, 0.30000004, 0, 0.29965353
 
 [node name="Platform17" parent="." unique_id=2010288662 instance=ExtResource("4_bvi20")]
 transform = Transform3D(0.29979658, 0, 0.0110454485, 0, 0.30000004, 0, -0.0110454485, 0, 0.29979658, 4.245002, 12.056587, -10.73626)
+
+[node name="Platform86" parent="." unique_id=433179437 instance=ExtResource("4_bvi20")]
+transform = Transform3D(0.26005855, 0, -0.14956447, 0, 0.30000007, 0, 0.14956447, 0, 0.26005855, 10.53214, 10.225233, -7.8405766)
 
 [node name="Platform18" parent="." unique_id=2012218556 instance=ExtResource("4_bvi20")]
 transform = Transform3D(0.1275253, 0, 0.2715461, 0, 0.30000007, 0, -0.2715461, 0, 0.1275253, 2.3798337, 12.056587, -13.074059)
@@ -409,6 +443,14 @@ CollapseMaxSpeed = 2.5
 transform = Transform3D(-0.69492203, 0, -0.71908516, 0, 1, 0, 0.71908516, 0, -0.69492203, -1.7538157, -0.6594162, -30.206184)
 CollapseMaxSpeed = 2.5
 
+[node name="Pillar30" parent="." unique_id=2061054552 instance=ExtResource("6_dyrbm")]
+transform = Transform3D(-0.69492203, 0, -0.71908516, 0, 1, 0, 0.71908516, 0, -0.69492203, -1.7538157, -5.0256033, -19.213852)
+CollapseMaxSpeed = 2.5
+
+[node name="Pillar31" parent="." unique_id=953756462 instance=ExtResource("6_dyrbm")]
+transform = Transform3D(-0.69492203, 0, -0.71908516, 0, 1, 0, 0.71908516, 0, -0.69492203, -13.94226, -4.647623, -16.229418)
+CollapseMaxSpeed = 2.5
+
 [node name="Pillar25" parent="." unique_id=1435642641 instance=ExtResource("6_dyrbm")]
 transform = Transform3D(-0.69492203, 0, -0.71908516, 0, 1, 0, 0.71908516, 0, -0.69492203, -13.430292, -2.2856398, -3.9779854)
 CollapseMaxSpeed = 2.5
@@ -451,8 +493,14 @@ transform = Transform3D(0.24700333, 0, -0.17026259, 0, 0.29999992, 0, 0.17026259
 [node name="Platform74" parent="." unique_id=2037512104 instance=ExtResource("3_dyrbm")]
 transform = Transform3D(0.24700333, 0, -0.17026259, 0, 0.29999992, 0, 0.17026259, 0, 0.24700333, 14.175828, 3.4597564, -14.662906)
 
+[node name="Platform87" parent="." unique_id=488802313 instance=ExtResource("3_dyrbm")]
+transform = Transform3D(0.04537306, 0, -0.296549, 0, 0.29999992, 0, 0.296549, 0, 0.04537306, 11.266411, 2.8250003, -12.732581)
+
 [node name="Platform75" parent="." unique_id=1931070722 instance=ExtResource("3_dyrbm")]
 transform = Transform3D(0.29301742, 0, -0.06434898, 0, 0.29999992, 0, 0.06434898, 0, 0.29301742, 15.086182, 7.809112, -16.1143)
+
+[node name="Platform83" parent="." unique_id=1389878407 instance=ExtResource("3_dyrbm")]
+transform = Transform3D(0.2971218, 0, -0.04145634, 0, 0.29999992, 0, 0.04145634, 0, 0.2971218, 11.305953, 8.397511, 0.24408722)
 
 [node name="Platform76" parent="." unique_id=1480856437 instance=ExtResource("3_dyrbm")]
 transform = Transform3D(-0.025463365, 0, 0.29891738, 0, 0.29999995, 0, -0.29891738, 0, -0.025463365, 10.320114, 7.809112, -20.994566)
@@ -467,7 +515,7 @@ collision_mask = 2
 script = ExtResource("8_bv3s5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LoseCollider" unique_id=1282226178]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30664063, 8.738926, 0.12597656)
+transform = Transform3D(0.99999803, 0, -1.0430813e-07, 0, 1, 0, 1.0430813e-07, 0, 0.99999803, 9.977087, 8.738926, -8.894272)
 shape = SubResource("BoxShape3D_o0x4h")
 
 [node name="Platform51" parent="." unique_id=834458887 instance=ExtResource("3_dyrbm")]
@@ -484,6 +532,9 @@ CollapseMaxSpeed = 2.5
 [node name="BouncePlatform" parent="." unique_id=607921131 instance=ExtResource("7_bvi20")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1427064, 3.047626, 4.499026)
 
+[node name="BouncePlatform12" parent="." unique_id=1631354555 instance=ExtResource("7_bvi20")]
+transform = Transform3D(0.7967409, 0, -0.60432106, 0, 1, 0, 0.60432106, 0, 0.7967409, -10.944063, 3.950338, 0.7943702)
+
 [node name="BouncePlatform3" parent="." unique_id=2035404789 instance=ExtResource("7_bvi20")]
 transform = Transform3D(0.9204912, 0, -0.39076328, 0, 1, 0, 0.39076328, 0, 0.9204912, 9.384705, 6.2295012, 4.499026)
 
@@ -499,8 +550,14 @@ transform = Transform3D(0.4558866, 0, -0.8900379, 0, 1, 0, 0.8900379, 0, 0.45588
 [node name="BouncePlatform5" parent="." unique_id=587575761 instance=ExtResource("7_bvi20")]
 transform = Transform3D(-0.32662416, 0, -0.9451543, 0, 1, 0, 0.9451543, 0, -0.32662416, 11.338341, 3.7182941, -24.446398)
 
+[node name="BouncePlatform10" parent="." unique_id=1328835257 instance=ExtResource("7_bvi20")]
+transform = Transform3D(0.48866686, 0, -0.87247044, 0, 1, 0, 0.87247044, 0, 0.48866686, 7.0107565, 1.2522309, -20.15105)
+
+[node name="BouncePlatform11" parent="." unique_id=2146141965 instance=ExtResource("7_bvi20")]
+transform = Transform3D(0.83858514, 0, -0.54477084, 0, 1, 0, 0.54477084, 0, 0.83858514, -3.4847841, 0.85833526, -7.1262054)
+
 [node name="BouncePlatform6" parent="." unique_id=548824696 instance=ExtResource("7_bvi20")]
-transform = Transform3D(0.8820364, 0, -0.47118127, 0, 1, 0, 0.47118127, 0, 0.8820364, 15.873005, 12.101818, -24.818022)
+transform = Transform3D(0.8820364, 0, -0.47118127, 0, 0.60907626, 0, 0.47118127, 0, 0.8820364, 15.873005, 12.101818, -24.818022)
 
 [node name="BouncePlatform8" parent="." unique_id=966958725 instance=ExtResource("7_bvi20")]
 transform = Transform3D(0.4874025, 0, -0.8731774, 0, 1, 0, 0.8731774, 0, 0.4874025, 21.017756, 1.9014883, -18.187546)
@@ -513,5 +570,5 @@ transform = Transform3D(3.9455395, 0, 0, 0, 5.4498143, 0, 0, 0, 3.9455395, 0, 2.
 
 [node name="ThiccPillah" parent="." unique_id=905257151 instance=ExtResource("9_46fj2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.83832, 0, -16.53531)
-CollapseMaxSpeed = 0.1
+CollapseMaxSpeed = 0.2
 CollapseAcceleration = 1.5
