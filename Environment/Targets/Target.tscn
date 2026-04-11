@@ -21,23 +21,23 @@ sides = 20
 material = SubResource("StandardMaterial3D_8k8pf")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=475890374]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -9.337761e-11, 0.0021362305)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -9.2043644e-11, 0.002105713)
 radius = 0.45
-height = 0.17175293
+height = 0.17181396
 sides = 20
 material = SubResource("StandardMaterial3D_fbxwc")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=521585540]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.9475901e-10, 0.0044555664)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.5874194e-10, 0.0036315918)
 radius = 0.35
-height = 0.1763916
+height = 0.17803955
 sides = 20
 material = SubResource("StandardMaterial3D_8k8pf")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="." unique_id=118383267]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -2.7079505e-10, 0.0061950684)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -2.0876564e-10, 0.004776001)
 radius = 0.20263672
-height = 0.1798706
+height = 0.18270874
 sides = 20
 material = SubResource("StandardMaterial3D_fbxwc")
 

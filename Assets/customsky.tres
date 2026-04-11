@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" format=3 uid="uid://dfn5454kdi2od"]
+[gd_resource type="VisualShader" format=3 uid="uid://81q87wktuw8l"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_bx1ur"]
 input_name = "sky_coords"

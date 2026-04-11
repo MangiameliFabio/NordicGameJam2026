@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://bn5v0cgtk708s"
 script = ExtResource("3_wbhtb")
 InputManager = NodePath("../InputManagerComponent")
 BulletScene = ExtResource("4_6jmpq")
-BulletSpawn = NodePath("../BulletSpawnLocation")
+BulletSpawn = NodePath("../CameraRig/PlayerCamera/BulletSpawnLocation")
 metadata/_custom_type_script = "uid://20v4xya0hnn"
 
 [node name="GroundStateDetector" type="Area3D" parent="." unique_id=1977185780]
@@ -75,5 +75,5 @@ radius = 0.06591797
 height = 0.24266052
 sides = 12
 
-[node name="BulletSpawnLocation" type="Marker3D" parent="." unique_id=2101315565]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0470219, -0.886891)
+[node name="BulletSpawnLocation" type="Marker3D" parent="CameraRig/PlayerCamera" unique_id=2101315565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4687437)
