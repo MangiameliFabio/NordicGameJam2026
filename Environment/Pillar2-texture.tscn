@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dot55ud2rc1dc"]
 
 [ext_resource type="PackedScene" uid="uid://c55jdru4wvenm" path="res://Assets/Textured Models/pillar2-texture.glb" id="1_gfha2"]
-[ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/DisappearingPlatform.gd" id="1_yxgtu"]
+[ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/Platform/DisappearingPlatform.gd" id="1_yxgtu"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pojmj"]
 height = 1.4133301
