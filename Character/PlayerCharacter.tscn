@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://20v4xya0hnn" path="res://Character/ShootingComponent.gd" id="3_wbhtb"]
 [ext_resource type="PackedScene" uid="uid://dytc0bjykef8c" path="res://Character/Bullet.tscn" id="4_6jmpq"]
 [ext_resource type="Script" uid="uid://cvg6u1fyk0wyb" path="res://Character/GroundStateHandler.gd" id="4_loigd"]
+[ext_resource type="PackedScene" uid="uid://spx4udsvaivg" path="res://Assets/Gun/gun.glb" id="7_kduic"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fatkt"]
 height = 1.65
@@ -60,20 +61,8 @@ TiltStrength = 0.75
 [node name="PlayerCamera" type="Camera3D" parent="CameraRig" unique_id=1318570402]
 current = true
 
-[node name="Gun" type="Node3D" parent="CameraRig/PlayerCamera" unique_id=806431390]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.27355546, -0.2689637, -0.40070158)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CameraRig/PlayerCamera/Gun" unique_id=1201263647]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-radius = 0.06591797
-height = 0.5097351
-sides = 12
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CameraRig/PlayerCamera/Gun/CSGCylinder3D" unique_id=1006715201]
-transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, -0.26049316, -0.08052264)
-radius = 0.06591797
-height = 0.24266052
-sides = 12
+[node name="gun" parent="CameraRig/PlayerCamera" unique_id=1460264084 instance=ExtResource("7_kduic")]
+transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 0.3224532, -0.26634216, -0.46983218)
 
 [node name="BulletSpawnLocation" type="Marker3D" parent="." unique_id=2101315565]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0470219, -0.886891)
