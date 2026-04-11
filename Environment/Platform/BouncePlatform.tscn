@@ -2,32 +2,25 @@
 
 [ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/Platform/DisappearingPlatform.gd" id="1_5hajr"]
 [ext_resource type="Script" uid="uid://doiqa6txlos1w" path="res://Environment/Platform/BounceComponent.gd" id="2_w4yhl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4yhl"]
-albedo_color = Color(0.35078216, 0.3693218, 0.24851328, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_4qklx"]
-material = SubResource("StandardMaterial3D_w4yhl")
-height = 0.5
+[ext_resource type="PackedScene" uid="uid://dcm7ix7rsbowf" path="res://Assets/Textured Models/trampoline.glb" id="3_4qklx"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_m23ea"]
-height = 0.50024414
+height = 0.24429321
+radius = 0.99316406
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3yj1p"]
-height = 0.50479126
+height = 0.3622589
+radius = 0.82958984
 
 [node name="BouncePlatform" type="AnimatableBody3D" unique_id=607921131 node_paths=PackedStringArray("PlatformMesh")]
 collision_layer = 6
 collision_mask = 6
 script = ExtResource("1_5hajr")
-PlatformMesh = NodePath("MeshInstance3D")
+PlatformMesh = NodePath("trampoline")
 metadata/_custom_type_script = "uid://cwfd50c823fyh"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2126887505]
-mesh = SubResource("CylinderMesh_4qklx")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1997754158]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.003540039, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.060682446, 0)
 shape = SubResource("CylinderShape3D_m23ea")
 
 [node name="BounceArea" type="Area3D" parent="." unique_id=627325038]
@@ -36,5 +29,7 @@ collision_mask = 2
 script = ExtResource("2_w4yhl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BounceArea" unique_id=1982659320]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004837036, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.088284984, 0)
 shape = SubResource("CylinderShape3D_3yj1p")
+
+[node name="trampoline" parent="." unique_id=1549058757 instance=ExtResource("3_4qklx")]

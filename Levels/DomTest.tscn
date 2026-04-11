@@ -6,17 +6,29 @@
 [ext_resource type="PackedScene" uid="uid://dd0sueaiygwb1" path="res://Environment/Platform 2.tscn" id="4_bvi20"]
 [ext_resource type="PackedScene" uid="uid://be3q48uouspff" path="res://Environment/Pillar1-texture.tscn" id="5_r83mg"]
 [ext_resource type="PackedScene" uid="uid://dot55ud2rc1dc" path="res://Environment/Pillar2-texture.tscn" id="6_dyrbm"]
+[ext_resource type="PackedScene" uid="uid://b81g1jcfypx02" path="res://Environment/Platform/BouncePlatform.tscn" id="7_bvi20"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3pvvw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r83mg"]
 albedo_color = Color(0.1237779, 0.080803774, 0, 1)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_dyrbm"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bvi20"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6hxdk"]
+
 [node name="DomTest" type="Node3D" unique_id=2091618539]
 
 [node name="PlayerCharacter" parent="." unique_id=57928311 instance=ExtResource("1_3pvvw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4326715, 11.585972, -4.2857566)
 MaxMovementSpeed = 5.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=72789605]
+transform = Transform3D(0.91822535, 0.36252514, 0.15949221, 0, -0.40269876, 0.91533256, 0.39605838, -0.8404816, -0.3697682, 0, 15.284137, 0)
+light_color = Color(0.799854, 0.72377974, 0.6421901, 1)
+light_volumetric_fog_energy = 3.851
 
 [node name="Platform1" parent="." unique_id=519910090 instance=ExtResource("2_r83mg")]
 transform = Transform3D(0.22799252, 0, -0.19498566, 0, 0.29999998, 0, 0.19498566, 0, 0.22799252, -5.0693808, 1.7871499, 0.9237349)
@@ -27,17 +39,35 @@ transform = Transform3D(-0.0069266013, 0, 0.29992002, 0, 0.29999992, 0, -0.29992
 [node name="Platform2" parent="." unique_id=931645337 instance=ExtResource("4_bvi20")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.1026123, 2.0196848, -0.19207287)
 
+[node name="Platform12" parent="." unique_id=360391248 instance=ExtResource("4_bvi20")]
+transform = Transform3D(0.2564627, 0, -0.15564987, 0, 0.29999998, 0, 0.15564987, 0, 0.2564627, 5.6529922, 1.8561792, -7.1262035)
+
 [node name="Platform3" parent="." unique_id=1090433255 instance=ExtResource("4_bvi20")]
-transform = Transform3D(0.20937087, 0, -0.2148577, 0, 0.29999998, 0, 0.2148577, 0, 0.20937087, 4.896957, 1.0328116, 6.2759023)
+transform = Transform3D(0.20937087, 0, -0.2148577, 0, 0.29999998, 0, 0.2148577, 0, 0.20937087, 5.9570746, 1.0328116, 6.2759023)
+
+[node name="Platform9" parent="." unique_id=601586335 instance=ExtResource("4_bvi20")]
+transform = Transform3D(0.20937087, 0, -0.2148577, 0, 0.29999998, 0, 0.2148577, 0, 0.20937087, 6.1470447, 1.9770856, 1.5245824)
+
+[node name="Platform8" parent="." unique_id=111470243 instance=ExtResource("4_bvi20")]
+transform = Transform3D(0.29941756, -0.018487021, 0.0027070204, 0.018486269, 0.2994298, 0.00016713349, -0.002712175, 0, 0.2999877, -1.1272243, 1.9392208, 8.1435585)
 
 [node name="Platform4" parent="." unique_id=1364863283 instance=ExtResource("2_r83mg")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.8953133, 1.9002938, 8.149623)
 
 [node name="Platform5" parent="." unique_id=562556492 instance=ExtResource("2_r83mg")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.3822544, 1.9002938, 8.149623)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.3822544, 1.8514726, 8.149623)
 
 [node name="Platform7" parent="." unique_id=1841532792 instance=ExtResource("2_r83mg")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.12639973, 1.9002938, 8.149623)
+
+[node name="Platform13" parent="." unique_id=1451900718 instance=ExtResource("2_r83mg")]
+transform = Transform3D(0.17143327, 0, -0.24619225, 0, 0.29999998, 0, 0.24619225, 0, 0.17143327, -5.813772, 2.0597892, 14.407725)
+
+[node name="Platform14" parent="." unique_id=1507742852 instance=ExtResource("2_r83mg")]
+transform = Transform3D(0.17143327, 0, -0.24619225, 0, 0.29999998, 0, 0.24619225, 0, 0.17143327, -6.6784015, 2.010968, 13.166047)
+
+[node name="Platform15" parent="." unique_id=1279298106 instance=ExtResource("2_r83mg")]
+transform = Transform3D(0.17143327, 0, -0.24619225, 0, 0.29999998, 0, 0.24619225, 0, 0.17143327, -7.540513, 2.0597892, 11.927984)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2062909304]
 transform = Transform3D(64.82076, 0, 0, 0, 1.39572, 0, 0, 0, 71.06086, 0, 0, 0)
@@ -59,9 +89,6 @@ transform = Transform3D(0.5260506, 0, 0.85045326, 0, 1, 0, -0.85045326, 0, 0.526
 [node name="Pillar5" parent="." unique_id=739054985 instance=ExtResource("5_r83mg")]
 transform = Transform3D(-0.53963804, 0, 0.84189713, 0, 1, 0, -0.84189713, 0, -0.53963804, -5.4901714, -3.0759115, 0.50030375)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=72789605]
-transform = Transform3D(1, 0, 0, 0, -0.27597287, 0.9611654, 0, -0.9611654, -0.27597287, 0, 5.8350525, 0)
-
 [node name="Pillar4" parent="." unique_id=1479640257 instance=ExtResource("6_dyrbm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.152282, 0, 15.8139)
 
@@ -70,3 +97,27 @@ transform = Transform3D(0.020349126, 0, -0.99979293, 0, 1, 0, 0.99979293, 0, 0.0
 
 [node name="Pillar8" parent="." unique_id=1481401188 instance=ExtResource("6_dyrbm")]
 transform = Transform3D(0.020349126, 0, -0.99979293, 0, 1, 0, 0.99979293, 0, 0.020349126, -10.831674, 7.508363, 0.07776642)
+
+[node name="Pillar9" parent="." unique_id=2111927257 instance=ExtResource("6_dyrbm")]
+transform = Transform3D(-0.8404437, 0, -0.5418989, 0, 1, 0, 0.5418989, 0, -0.8404437, 7.2836456, 5.3283386, -9.328626)
+
+[node name="BouncePlatform" parent="." unique_id=607921131 instance=ExtResource("7_bvi20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1427064, 3.047626, 4.499026)
+
+[node name="BouncePlatform2" parent="." unique_id=1214919302 instance=ExtResource("7_bvi20")]
+transform = Transform3D(0.5379177, 0, -0.8429974, 0, 1, 0, 0.8429974, 0, 0.5379177, 0.40873575, 5.9000764, -2.9115844)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=172884680]
+transform = Transform3D(3.9455395, 0, 0, 0, 5.4498143, 0, 0, 0, 3.9455395, 0, 2.5978417, 28.83514)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D" unique_id=491500552]
+transform = Transform3D(3.1577716, 0, 0, 0, 1, 0, 0, 0, 3.1577716, -0.144891, 0, -1.1704893)
+mesh = SubResource("CylinderMesh_dyrbm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D" unique_id=201200674]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -3.4854424, 0, -2.725397)
+mesh = SubResource("CylinderMesh_bvi20")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D" unique_id=1030604632]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -3.71781, 0, -5.5384645)
+mesh = SubResource("CylinderMesh_6hxdk")

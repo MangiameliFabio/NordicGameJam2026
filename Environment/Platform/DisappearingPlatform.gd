@@ -2,7 +2,7 @@ class_name DisappearingPlatform extends AnimatableBody3D
 
 @export_category("Platform Movement")
 @export var TimeTilCollapse : float = 2
-@export var CollapseMaxSpeed : float = 5
+@export var CollapseMaxSpeed : float = 3
 @export var CollapseAcceleration : float = 2
 @export var TimeTilDespawn : float = 5
 
