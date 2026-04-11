@@ -7,7 +7,7 @@ class_name DisappearingPlatform extends AnimatableBody3D
 @export var TimeTilDespawn : float = 5
 
 @export_category("Platform Rumble")
-@export var PlatformMesh: MeshInstance3D
+@export var PlatformMesh: Node3D
 @export var RumbleStrength := 0.04
 @export var CollapseRumbleStrength := 0.08
 @export var RumbleSpeed := 7.0

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cxowk8ter332h"]
+
+[ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/DisappearingPlatform.gd" id="1_sc5vf"]
+[ext_resource type="PackedScene" uid="uid://bhfgp2rqs0v67" path="res://Assets/Wooden platform5.glb" id="2_sc5vf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jecje"]
+size = Vector3(5.253601, 7.3022842, 5.242798)
+
+[node name="Platform5" type="AnimatableBody3D" unique_id=519910090 node_paths=PackedStringArray("PlatformMesh")]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_sc5vf")
+PlatformMesh = NodePath("Wooden platform5")
+metadata/_custom_type_script = "uid://cwfd50c823fyh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1574451527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02933979, -3.4904976, 0.019836426)
+shape = SubResource("BoxShape3D_jecje")
+
+[node name="Wooden platform5" parent="." unique_id=64532795 instance=ExtResource("2_sc5vf")]
