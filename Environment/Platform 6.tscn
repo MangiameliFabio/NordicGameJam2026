@@ -4,7 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://leldrm6cglrf" path="res://Assets/Wooden platform6.glb" id="2_7vt6v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jecje"]
-size = Vector3(5.253601, 3.880146, 5.242798)
+size = Vector3(5.253601, 1.3286228, 5.242798)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c6cx0"]
+size = Vector3(5.253601, 0.7274194, 0.5828247)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqbf0"]
+size = Vector3(5.253601, 0.7274194, 0.5828247)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7vt6v"]
+size = Vector3(8.585861, 0.83902097, 0.68862915)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bahs6"]
+size = Vector3(8.520958, 0.9274304, 0.68862915)
 
 [node name="Platform6" type="AnimatableBody3D" unique_id=519910090 node_paths=PackedStringArray("PlatformMesh")]
 collision_layer = 6
@@ -14,7 +26,23 @@ PlatformMesh = NodePath("Wooden platform6")
 metadata/_custom_type_script = "uid://cwfd50c823fyh"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1574451527]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02933979, -1.7794285, 0.019836426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02933979, -0.5036669, 0.019836426)
 shape = SubResource("BoxShape3D_jecje")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=2055864353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1447124, -0.5222814, -2.3101501)
+shape = SubResource("BoxShape3D_c6cx0")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1845187682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1447124, -0.5222814, 2.3210547)
+shape = SubResource("BoxShape3D_xqbf0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=761259417]
+transform = Transform3D(0.9071175, -0.4208775, 0, 0.4208775, 0.9071175, 0, 0, 0, 1, -1.8754668, -2.796598, 2.3205416)
+shape = SubResource("BoxShape3D_7vt6v")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1952073403]
+transform = Transform3D(0.9071175, -0.4208775, 0, 0.4208775, 0.9071175, 0, 0, 0, 1, -1.8366859, -2.8030782, -2.3059978)
+shape = SubResource("BoxShape3D_bahs6")
 
 [node name="Wooden platform6" parent="." unique_id=197933445 instance=ExtResource("2_7vt6v")]

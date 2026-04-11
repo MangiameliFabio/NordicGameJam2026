@@ -4,7 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://coka2ox2nyqyo" path="res://Assets/Wooden platform3.glb" id="2_ishkl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jecje"]
-size = Vector3(5.253601, 7.3022842, 5.242798)
+size = Vector3(5.208786, 1.2537408, 5.242798)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jj86e"]
+size = Vector3(0.7187252, 5.914652, 0.6018677)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ishkl"]
+size = Vector3(0.7187252, 5.914652, 0.6018677)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3aw8"]
+size = Vector3(0.7187252, 5.914652, 0.6018677)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2b55"]
+size = Vector3(0.7187252, 5.914652, 0.6018677)
 
 [node name="Platform3" type="AnimatableBody3D" unique_id=519910090 node_paths=PackedStringArray("PlatformMesh")]
 collision_layer = 6
@@ -14,7 +26,23 @@ PlatformMesh = NodePath("Wooden platform3")
 metadata/_custom_type_script = "uid://cwfd50c823fyh"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1574451527]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.080218315, -3.4904976, 0.019836426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06176281, -0.46622586, 0.019836426)
 shape = SubResource("BoxShape3D_jecje")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1966352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2384586, -4.1222544, 2.3403015)
+shape = SubResource("BoxShape3D_jj86e")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=2141456516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1752431, -4.1222544, 2.3403015)
+shape = SubResource("BoxShape3D_ishkl")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1645744082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2384586, -4.1222544, -2.3061218)
+shape = SubResource("BoxShape3D_s3aw8")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=807373921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1752431, -4.1222544, -2.3061218)
+shape = SubResource("BoxShape3D_q2b55")
 
 [node name="Wooden platform3" parent="." unique_id=27410309 instance=ExtResource("2_ishkl")]

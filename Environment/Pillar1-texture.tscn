@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://be3q48uouspff"]
+
+[ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/DisappearingPlatform.gd" id="1_ka0ww"]
+[ext_resource type="PackedScene" uid="uid://dl4rk64w36hmx" path="res://Assets/Textured Models/pillar-texture.glb" id="1_xillt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ka0ww"]
+height = 3.397007
+radius = 1.7685547
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pojmj"]
+height = 3.488926
+radius = 1.703125
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xs0ps"]
+height = 2.9986115
+radius = 1.565918
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nebad"]
+height = 2.6564713
+radius = 1.3789063
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rmx24"]
+height = 1.7465837
+radius = 2.5893555
+
+[node name="Pillar" type="AnimatableBody3D" unique_id=298519961 node_paths=PackedStringArray("PlatformMesh")]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_ka0ww")
+PlatformMesh = NodePath("pillar-texture")
+metadata/_custom_type_script = "uid://cwfd50c823fyh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1118051363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17188346, -6.4868774, 0.8787509)
+shape = SubResource("CylinderShape3D_ka0ww")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1110295375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17336321, -2.4247928, 0.3806528)
+shape = SubResource("CylinderShape3D_pojmj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1534073538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08287281, 0.77648497, -0.26046306)
+shape = SubResource("CylinderShape3D_xs0ps")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1072911559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31261843, 4.0747695, -0.37207973)
+shape = SubResource("CylinderShape3D_nebad")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1867151838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017521799, 7.682319, 0.09651518)
+shape = SubResource("CylinderShape3D_rmx24")
+
+[node name="pillar-texture" parent="." unique_id=1311685288 instance=ExtResource("1_xillt")]

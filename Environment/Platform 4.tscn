@@ -4,7 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://c5wsm2xpcyc78" path="res://Assets/Wooden platform4.glb" id="2_vi667"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jecje"]
-size = Vector3(5.253601, 7.3022842, 5.242798)
+size = Vector3(5.253601, 1.2909031, 5.242798)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vi667"]
+size = Vector3(0.75553894, 5.887803, 0.64297485)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfaic"]
+size = Vector3(0.75553894, 5.887803, 0.64297485)
 
 [node name="Platform4" type="AnimatableBody3D" unique_id=519910090 node_paths=PackedStringArray("PlatformMesh")]
 collision_layer = 6
@@ -14,7 +20,15 @@ PlatformMesh = NodePath("Wooden platform4")
 metadata/_custom_type_script = "uid://cwfd50c823fyh"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1574451527]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02933979, -3.4904976, 0.019836426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02933979, -0.484807, 0.019836426)
 shape = SubResource("BoxShape3D_jecje")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=333734673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1487226, -4.1284084, 2.319748)
+shape = SubResource("BoxShape3D_vi667")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=695299415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1487226, -4.1284084, -2.2968607)
+shape = SubResource("BoxShape3D_lfaic")
 
 [node name="Wooden platform4" parent="." unique_id=1585100815 instance=ExtResource("2_vi667")]
