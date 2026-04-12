@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b81g1jcfypx02" path="res://Environment/Platform/BouncePlatform.tscn" id="7_bvi20"]
 [ext_resource type="Script" uid="uid://b8bmhgawerm3n" path="res://Character/LoseCollider.gd" id="8_bv3s5"]
 [ext_resource type="PackedScene" uid="uid://bvb1jyr5r2sve" path="res://Environment/ThiccPillah.tscn" id="9_46fj2"]
-[ext_resource type="PackedScene" uid="uid://kx0ysi1654k4" path="res://Environment/BounncePad/BouncePad.tscn" id="11_rsi7v"]
 [ext_resource type="PackedScene" uid="uid://bkycgnyx6wis3" path="res://Environment/Stump.tscn" id="12_egk5a"]
 [ext_resource type="PackedScene" uid="uid://giwcpb5p3ljp" path="res://Environment/Targets/Target.tscn" id="13_d4sor"]
 [ext_resource type="PackedScene" uid="uid://bq3pnwieq6uiw" path="res://Environment/Platform 5.tscn" id="15_e6j2a"]
@@ -713,9 +712,6 @@ transform = Transform3D(3.9455395, 0, 0, 0, 5.4498143, 0, 0, 0, 3.9455395, 0, 2.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.83832, 0, -16.53531)
 CollapseMaxSpeed = 0.2
 CollapseAcceleration = 1.5
-
-[node name="BouncePad" parent="." unique_id=160722725 instance=ExtResource("11_rsi7v")]
-transform = Transform3D(0.4680533, 0, 0.88370025, 0, 1, 0, -0.88370025, 0, 0.4680533, -5.347636, 2.4178207, -16.403603)
 
 [node name="Stump" parent="." unique_id=1827369874 instance=ExtResource("12_egk5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7471576, -5.3647633, -16.714128)
