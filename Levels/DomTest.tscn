@@ -4,10 +4,10 @@
 [ext_resource type="Shader" uid="uid://81q87wktuw8l" path="res://Assets/customsky.tres" id="2_6hxdk"]
 [ext_resource type="PackedScene" uid="uid://cs1jxbgcoay88" path="res://UI/HUD.tscn" id="2_44fbc"]
 [ext_resource type="PackedScene" uid="uid://dll2dpe8ss3h5" path="res://Environment/Platform 1.tscn" id="2_r83mg"]
-[ext_resource type="PackedScene" uid="uid://cnfayxa2rjssg" path="res://Environment/Platform 6.tscn" id="3_dyrbm"]
-[ext_resource type="PackedScene" uid="uid://dd0sueaiygwb1" path="res://Environment/Platform 2.tscn" id="4_bvi20"]
-[ext_resource type="PackedScene" uid="uid://be3q48uouspff" path="res://Environment/Pillar1-texture.tscn" id="5_r83mg"]
-[ext_resource type="PackedScene" uid="uid://dot55ud2rc1dc" path="res://Environment/Pillar2-texture.tscn" id="6_dyrbm"]
+[ext_resource type="PackedScene" uid="uid://b75jjp3yod2h3" path="res://Environment/Platform 6.tscn" id="3_dyrbm"]
+[ext_resource type="PackedScene" uid="uid://cc6n80r51cfts" path="res://Environment/Platform 2.tscn" id="4_bvi20"]
+[ext_resource type="PackedScene" uid="uid://cw86d63vq4pjf" path="res://Environment/Pillar1-texture.tscn" id="5_r83mg"]
+[ext_resource type="PackedScene" uid="uid://0nljeqr6yvkn" path="res://Environment/Pillar2-texture.tscn" id="6_dyrbm"]
 [ext_resource type="PackedScene" uid="uid://b81g1jcfypx02" path="res://Environment/Platform/BouncePlatform.tscn" id="7_bvi20"]
 [ext_resource type="Script" uid="uid://b8bmhgawerm3n" path="res://Character/LoseCollider.gd" id="8_bv3s5"]
 [ext_resource type="PackedScene" uid="uid://bvb1jyr5r2sve" path="res://Environment/ThiccPillah.tscn" id="9_46fj2"]
@@ -733,6 +733,14 @@ transform = Transform3D(-0.78853697, 0, -0.6149874, 0, 1, 0, 0.6149874, 0, -0.78
 
 [node name="Target" parent="." unique_id=1106970928 instance=ExtResource("13_d4sor")]
 transform = Transform3D(0.80981654, 0, 0.5866834, -0.16351226, 0.96037644, 0.22570083, -0.5634369, -0.2787062, 0.77772874, 21.619473, 6.870378, -4.0963717)
+PointTarget = true
+
+[node name="Target10" parent="." unique_id=709518251 instance=ExtResource("13_d4sor")]
+transform = Transform3D(0.84257054, 0.25494993, -0.47442132, -0.16351229, 0.96037644, 0.22570083, 0.5131655, -0.11259517, 0.8508725, 18.541124, 7.187431, 7.4266915)
+PointTarget = true
+
+[node name="Target11" parent="." unique_id=611899343 instance=ExtResource("13_d4sor")]
+transform = Transform3D(0.4157691, 0.27455357, -0.8670391, -0.1635123, 0.96037644, 0.22570081, 0.89465076, 0.047932073, 0.44418788, 10.413794, 6.186646, 8.555609)
 PointTarget = true
 
 [node name="Target9" parent="." unique_id=1225459368 instance=ExtResource("13_d4sor")]
