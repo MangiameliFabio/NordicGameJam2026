@@ -6,5 +6,5 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		body.velocity.y = 10
-		
+		$"../BounceAudio".play()
 		get_parent().CollapsePlatform()

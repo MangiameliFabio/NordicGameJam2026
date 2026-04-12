@@ -14,6 +14,9 @@ func _ready() -> void:
 func _on_area_entered(area: Node3D) -> void:
 	if PointTarget:
 		Global.add_to_score(AddedPoints)
+		$TargetPlayer.play()
+		visible = false
+		await $TargetPlayer.finished
 		queue_free()
 		return
 	var trigger_object : Node = null
@@ -34,4 +37,7 @@ func _on_area_entered(area: Node3D) -> void:
 	trigger_object.Trigger(get_parent())
 	
 	if DestroyAfterHit:
+		$TargetPlayer.play()
+		visible = false
+		await $TargetPlayer.finished
 		queue_free()
