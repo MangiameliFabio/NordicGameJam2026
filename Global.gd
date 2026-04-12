@@ -3,6 +3,13 @@ extends Node
 var _high_score : int = 0
 var _score : int = 0
 
+func _ready() -> void:
+	var audio_player = AudioStreamPlayer.new()
+	add_child(audio_player)
+	audio_player.stream = load("res://Audio/Music/harp-nosink-musicv2.mp3")
+	audio_player.play()
+	audio_player.bus = "Music"
+
 func add_to_score(added_points: int) -> void:
 	_score += added_points
 	

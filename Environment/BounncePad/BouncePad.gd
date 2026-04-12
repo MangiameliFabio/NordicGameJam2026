@@ -6,4 +6,4 @@ func BulletEntered(bullet: Bullet) -> void:
 
 	if incoming.dot(pad_normal) < 0.0:
 		bullet._velocity = incoming.bounce(pad_normal)
-	
+		$RicochetSound.play()
