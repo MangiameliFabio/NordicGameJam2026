@@ -37,22 +37,23 @@ glow_blend_mode = 0
 fog_enabled = true
 fog_light_color = Color(0.566096, 0.54439425, 0.54151064, 1)
 fog_light_energy = 0.57
-fog_density = 0.0046
-fog_sky_affect = 0.751
+fog_density = 0.0045
+fog_sky_affect = 0.753
 fog_depth_begin = 74.5
-volumetric_fog_density = 0.024
-volumetric_fog_albedo = Color(0.8047426, 0.80474263, 0.8047426, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0457
+volumetric_fog_albedo = Color(0.7204675, 0.7204674, 0.7204677, 1)
 volumetric_fog_emission = Color(0.021434618, 0.02143464, 0.021434633, 1)
-volumetric_fog_length = 52.99
-volumetric_fog_detail_spread = 1.5157171
+volumetric_fog_length = 12.3
+volumetric_fog_detail_spread = 2.0000005
 volumetric_fog_ambient_inject = 0.2
 adjustment_enabled = true
 adjustment_contrast = 1.05
 adjustment_saturation = 1.05
 
 [sub_resource type="Gradient" id="Gradient_46fj2"]
-offsets = PackedFloat32Array(0.09294872, 0.74038464, 1)
-colors = PackedColorArray(0.20871028, 0.20871013, 0.20871004, 1, 0.18358985, 0.18359068, 0.18359026, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.75619835, 1)
+colors = PackedColorArray(0.1331965, 0.13319638, 0.13319626, 1, 0.15847185, 0.15847254, 0.15847215, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_rsi7v"]
 noise_type = 2
@@ -79,6 +80,7 @@ albedo_texture = SubResource("NoiseTexture2D_rsi7v")
 metallic_specular = 0.1
 roughness = 0.0
 normal_enabled = true
+normal_scale = 1.36
 normal_texture = SubResource("NoiseTexture2D_46fj2")
 
 [sub_resource type="QuadMesh" id="QuadMesh_46fj2"]
@@ -91,6 +93,8 @@ metallic_specular = 0.13
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r83mg"]
 albedo_color = Color(0.1237779, 0.080803774, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hrj5c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o0x4h"]
 size = Vector3(334.2331, 1, 352.64014)
@@ -389,6 +393,12 @@ mesh = SubResource("QuadMesh_46fj2")
 transform = Transform3D(1500, 0, 0, 0, 1, 0, 0, 0, 1500, 0, -0.38204217, 0)
 material_override = SubResource("StandardMaterial3D_bv3s5")
 mesh = SubResource("PlaneMesh_3pvvw")
+surface_material_override/0 = SubResource("StandardMaterial3D_r83mg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=336573590]
+transform = Transform3D(1500, 0, 0, 0, 1, 0, 0, 0, 1500, 0, -10.786835, 0)
+material_override = SubResource("StandardMaterial3D_bv3s5")
+mesh = SubResource("PlaneMesh_hrj5c")
 surface_material_override/0 = SubResource("StandardMaterial3D_r83mg")
 
 [node name="Pillar" parent="." unique_id=255467983 instance=ExtResource("5_r83mg")]
