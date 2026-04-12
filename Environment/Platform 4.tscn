@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://c0pk6qvwflj1t"]
+[gd_scene format=3 uid="uid://bl0lc2kaucft2"]
 
-[ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/DisappearingPlatform.gd" id="1_vi667"]
+[ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/Platform/DisappearingPlatform.gd" id="1_vi667"]
 [ext_resource type="PackedScene" uid="uid://c5wsm2xpcyc78" path="res://Assets/Wooden platform4.glb" id="2_vi667"]
+[ext_resource type="Script" uid="uid://42aacemmg5f" path="res://Environment/PlatformAudio.gd" id="3_2mh5t"]
+[ext_resource type="AudioStream" uid="uid://bq771cokopa8x" path="res://Audio/WoodRumble.mp3" id="4_x65d0"]
+[ext_resource type="AudioStream" uid="uid://bxvx1tplw36nf" path="res://Audio/WoodCollapse.mp3" id="5_1h5df"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jecje"]
 size = Vector3(5.253601, 1.2909031, 5.242798)
@@ -32,3 +35,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1487226, -4.1284084, -2.296
 shape = SubResource("BoxShape3D_lfaic")
 
 [node name="Wooden platform4" parent="." unique_id=1585100815 instance=ExtResource("2_vi667")]
+
+[node name="PillarAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=571255389 node_paths=PackedStringArray("Platform")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6716194, -0.11315727)
+volume_db = -25.0
+bus = &"SFX"
+script = ExtResource("3_2mh5t")
+RumbleAudio = ExtResource("4_x65d0")
+CollapseAudio = ExtResource("5_1h5df")
+Platform = NodePath("..")
