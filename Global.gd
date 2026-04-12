@@ -36,10 +36,10 @@ func start_game(level: int) -> void:
 	
 
 func end_game() -> void:
+	await TransitionManager.change_scene("res://UI/EndScreen.tscn")
+
 	match current_level:
 		1: if _high_score_1 < _score:
 				_high_score_1 = _score
 		2: if _high_score_2 < _score:
 				_high_score_2 = _score
-				
-	TransitionManager.change_scene("res://UI/EndScreen.tscn")
