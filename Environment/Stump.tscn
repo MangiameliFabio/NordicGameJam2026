@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cwfd50c823fyh" path="res://Environment/Platform/DisappearingPlatform.gd" id="1_e32r7"]
 [ext_resource type="PackedScene" uid="uid://xs5efixa52nw" path="res://Assets/Textured Models/stump.glb" id="1_yi1i0"]
+[ext_resource type="Script" uid="uid://42aacemmg5f" path="res://Environment/PlatformAudio.gd" id="3_1ma4k"]
+[ext_resource type="AudioStream" uid="uid://bq771cokopa8x" path="res://Audio/WoodRumble.mp3" id="4_ghewh"]
+[ext_resource type="AudioStream" uid="uid://bxvx1tplw36nf" path="res://Audio/WoodCollapse.mp3" id="5_lhfxt"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yi1i0"]
 height = 17.79361
@@ -19,3 +22,12 @@ shape = SubResource("CylinderShape3D_yi1i0")
 
 [node name="stump" parent="." unique_id=1609754541 instance=ExtResource("1_yi1i0")]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+
+[node name="PillarAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=135230020 node_paths=PackedStringArray("Platform")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.44714, 0)
+volume_db = -25.0
+bus = &"SFX"
+script = ExtResource("3_1ma4k")
+RumbleAudio = ExtResource("4_ghewh")
+CollapseAudio = ExtResource("5_lhfxt")
+Platform = NodePath("..")

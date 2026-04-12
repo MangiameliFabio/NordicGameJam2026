@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bxvx1tplw36nf" path="res://Audio/WoodCollapse.mp3" id="5_otcbx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jecje"]
-size = Vector3(5.253601, 1.2218113, 5.242798)
+size = Vector3(5.253601, 0.7866869, 5.242798)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sc5vf"]
 size = Vector3(5.145981, 0.73257685, 0.6658478)
@@ -28,6 +28,7 @@ size = Vector3(0.74181366, 6.019184, 0.6658478)
 size = Vector3(0.74181366, 6.019184, 0.6658478)
 
 [node name="Platform5" type="AnimatableBody3D" unique_id=519910090 node_paths=PackedStringArray("PlatformMesh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 collision_layer = 6
 collision_mask = 6
 script = ExtResource("1_sc5vf")
@@ -35,7 +36,7 @@ PlatformMesh = NodePath("Wooden platform5")
 metadata/_custom_type_script = "uid://cwfd50c823fyh"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1574451527]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02933979, -0.45026112, 0.019836426)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.029339785, -0.2326989, 0.019836426)
 shape = SubResource("BoxShape3D_jecje")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=190074748]

@@ -7,13 +7,13 @@
 [ext_resource type="AudioStream" uid="uid://bxvx1tplw36nf" path="res://Audio/WoodCollapse.mp3" id="5_imoq2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jecje"]
-size = Vector3(5.253601, 1.3286228, 5.242798)
+size = Vector3(5.253601, 0.79858875, 5.242798)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c6cx0"]
-size = Vector3(5.253601, 0.7274194, 0.5828247)
+size = Vector3(3.7791443, 0.7274194, 0.5828247)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xqbf0"]
-size = Vector3(5.253601, 0.7274194, 0.5828247)
+size = Vector3(3.7723083, 0.7274194, 0.5828247)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7vt6v"]
 size = Vector3(8.585861, 0.83902097, 0.68862915)
@@ -22,6 +22,7 @@ size = Vector3(8.585861, 0.83902097, 0.68862915)
 size = Vector3(8.520958, 0.9274304, 0.68862915)
 
 [node name="Platform6" type="AnimatableBody3D" unique_id=519910090 node_paths=PackedStringArray("PlatformMesh")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 collision_layer = 6
 collision_mask = 6
 script = ExtResource("1_7vt6v")
@@ -29,15 +30,15 @@ PlatformMesh = NodePath("Wooden platform6")
 metadata/_custom_type_script = "uid://cwfd50c823fyh"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1574451527]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02933979, -0.5036669, 0.019836426)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.029339785, -0.2386498, 0.019836426)
 shape = SubResource("BoxShape3D_jecje")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=2055864353]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1447124, -0.5222814, -2.3101501)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -4.407483, -0.52228135, -2.3101501)
 shape = SubResource("BoxShape3D_c6cx0")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1845187682]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1447124, -0.5222814, 2.3210547)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -4.404065, -0.52228135, 2.3210542)
 shape = SubResource("BoxShape3D_xqbf0")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=761259417]
