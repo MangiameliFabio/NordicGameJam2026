@@ -62,6 +62,3 @@ script = ExtResource("3_vff71")
 RumbleAudio = ExtResource("4_yk41w")
 CollapseAudio = ExtResource("5_2q5qe")
 Platform = NodePath("..")
-
-[connection signal="collapse_start" from="." to="PillarAudioPlayer" method="_on_collapse_start"]
-[connection signal="rumble_start" from="." to="PillarAudioPlayer" method="_on_rumble_start"]

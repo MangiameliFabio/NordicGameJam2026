@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cs1jxbgcoay88" path="res://UI/HUD.tscn" id="14_kd03u"]
 [ext_resource type="PackedScene" uid="uid://leldrm6cglrf" path="res://Assets/Wooden platform6.glb" id="15_wt2y5"]
 [ext_resource type="PackedScene" uid="uid://c55jdru4wvenm" path="res://Assets/Textured Models/pillar2-texture.glb" id="16_l0inx"]
+[ext_resource type="FontFile" uid="uid://b6d02duq8yio7" path="res://UI/Tagesschrift-Regular.ttf" id="17_x0vm0"]
 [ext_resource type="Texture2D" uid="uid://tcivfdbq0p0o" path="res://UI/sky_17_2k.png" id="18_x0vm0"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3lny5"]
@@ -74,6 +75,39 @@ ssao_enabled = true
 fog_light_energy = 1.63
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(1, 0.8745098, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_x0vm0"]
+offsets = PackedFloat32Array(0.09294872, 0.74038464, 1)
+colors = PackedColorArray(0.20871028, 0.20871013, 0.20871004, 1, 0.18358985, 0.18359068, 0.18359026, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_st24r"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rsi7v"]
+noise = SubResource("FastNoiseLite_st24r")
+color_ramp = SubResource("Gradient_x0vm0")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_55lbk"]
+frequency = 0.025
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_46fj2"]
+noise = SubResource("FastNoiseLite_55lbk")
+seamless = true
+as_normal_map = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6a1t"]
+depth_draw_mode = 1
+albedo_color = Color(0.14044756, 0.14044741, 0.1404475, 1)
+albedo_texture = SubResource("NoiseTexture2D_rsi7v")
+metallic_specular = 0.1
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_46fj2")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3r22g"]
 
 [node name="FabioTest" type="Node3D" unique_id=1179950485]
 
@@ -452,7 +486,7 @@ shape = SubResource("BoxShape3D_7gcp4")
 transform = Transform3D(-1.1805015e-08, -0.007896304, 0.24987526, 0.25, -7.6723117e-10, 1.1786664e-08, 3.945648e-10, 0.24987526, 0.007896304, -0.6935903, 6.832322, -0.9751626)
 
 [node name="Sprite3D" type="Sprite3D" parent="pillar2-texture/Wooden platform6" unique_id=375546274]
-transform = Transform3D(-4.371139e-08, 1, 0, 4.371139e-08, 0, 1, 1, 4.371139e-08, -4.3711385e-08, -0.7387352, 0.16898474, 0.3171643)
+transform = Transform3D(-4.371139e-08, 1, 0, 4.371139e-08, 0, 1, 1, 4.371139e-08, -4.3711385e-08, -0.7202568, 0.16898474, 0.3171643)
 texture = SubResource("ViewportTexture_l0inx")
 
 [node name="SubViewport" type="SubViewport" parent="pillar2-texture/Wooden platform6" unique_id=494221950]
@@ -462,15 +496,25 @@ transparent_bg = true
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0.2627451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_x0vm0")
 theme_override_font_sizes/font_size = 32
-text = "SPREAD NOTHING!
+text = "Do not let anything remain!
 
 
-Jump on platforms to remove
-them and get points!
+Step onto what exists, 
+and it will surrender itself.
 
 
-Try to get as much as possible!"
+Absence grows where
+ certainty used to stand."
+
+[node name="Camera3D" type="Camera3D" parent="pillar2-texture/Wooden platform6" unique_id=845973295]
+transform = Transform3D(2.9802322e-08, 0.72157896, 0.6923321, 0.9701732, 0.16783024, -0.17492011, -0.24241295, 0.671682, -0.70005655, 103.05796, -178.85086, 15.624457)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1267732981]
 environment = SubResource("Environment_u6a1t")
+
+[node name="meshinstanceDARK-SEA" type="MeshInstance3D" parent="." unique_id=1536956289]
+transform = Transform3D(1500, 0, 0, 0, -6.556708e-05, 1, 0, -1500, -4.371139e-08, 0, 0.7855873, -3.4339113e-08)
+material_override = SubResource("StandardMaterial3D_u6a1t")
+mesh = SubResource("QuadMesh_3r22g")

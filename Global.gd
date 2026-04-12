@@ -1,7 +1,9 @@
 extends Node
 
-var _high_score : int = 0
+var _high_score_1 : int = 0
+var _high_score_2 : int = 0
 var _score : int = 0
+var current_level : int = 0
 
 func _ready() -> void:
 	var audio_player = AudioStreamPlayer.new()
@@ -16,14 +18,28 @@ func add_to_score(added_points: int) -> void:
 func get_score() -> int:
 	return _score
 	
-func get_high_score() -> int:
-	return _high_score
+func get_high_score(level: int) -> int:
+	match level:
+		1: return _high_score_1
+		2: return _high_score_2
+	return 0
 
-func start_game() -> void:
+func start_game(level: int) -> void:
 	_score = 0
-	TransitionManager.change_scene("res://Levels/FabioTest.tscn")
+	match level:
+		1:
+			current_level = 1
+			TransitionManager.change_scene("res://Levels/DomTest.tscn")
+		2: 
+			current_level = 2
+			TransitionManager.change_scene("res://Levels/FabioTest.tscn")
+	
 
 func end_game() -> void:
-	if _high_score < _score:
-		_high_score = _score
+	match current_level:
+		1: if _high_score_1 < _score:
+				_high_score_1 = _score
+		2: if _high_score_2 < _score:
+				_high_score_2 = _score
+				
 	TransitionManager.change_scene("res://UI/EndScreen.tscn")

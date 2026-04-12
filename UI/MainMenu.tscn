@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://q7f0duuji5ow"]
 
 [ext_resource type="Script" uid="uid://bd6qbpq1pt757" path="res://UI/MainMenu.gd" id="1_uahxu"]
+[ext_resource type="Texture2D" uid="uid://blbd4guip3dqy" path="res://UI/Menu.png" id="2_b37jj"]
+[ext_resource type="FontFile" uid="uid://b6d02duq8yio7" path="res://UI/Tagesschrift-Regular.ttf" id="3_8aown"]
 
 [node name="MainMenu" type="Control" unique_id=2005175592]
 layout_mode = 3
@@ -10,6 +12,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uahxu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=832633406]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b37jj")
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=792922600]
 layout_mode = 1
@@ -32,6 +44,7 @@ theme_override_font_sizes/font_size = 32
 text = "Start Game"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2094663453]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Options"
@@ -41,4 +54,24 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=887492516]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 50
+
+[node name="Label" type="Label" parent="MarginContainer2" unique_id=436035673]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_8aown")
+theme_override_font_sizes/font_size = 64
+text = "NOSINK"
+horizontal_alignment = 2
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start Game" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dovxsel6bktei"]
+
+[ext_resource type="Texture2D" uid="uid://bkyqrl52vpcdx" path="res://UI/Level1.png" id="1_l70vf"]
+[ext_resource type="Script" uid="uid://cn4fycgnrcj15" path="res://UI/LevelSelection.gd" id="1_twxpp"]
+[ext_resource type="Texture2D" uid="uid://ro71fsmeqdcx" path="res://UI/image.png" id="2_akau2"]
+[ext_resource type="Texture2D" uid="uid://c7bjy58cgmrfa" path="res://UI/Level2.png" id="2_twxpp"]
+
+[node name="LevelSelection" type="Control" unique_id=370817117]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twxpp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1994454182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_akau2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1248325254]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=2000207912]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1568074183]
+layout_mode = 2
+text = "Level 1"
+
+[node name="HighScoreLevel1" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1187555179]
+layout_mode = 2
+text = "Highscore: 0"
+
+[node name="Level1" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1817913622]
+layout_mode = 2
+icon = ExtResource("1_l70vf")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=934399062]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=502664724]
+layout_mode = 2
+text = "Level 2"
+
+[node name="HighScoreLevel2" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1214600026]
+layout_mode = 2
+text = "Highscore: 0"
+
+[node name="Level2" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=760018963]
+layout_mode = 2
+icon = ExtResource("2_twxpp")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Level2" to="." method="_on_level_2_pressed"]
